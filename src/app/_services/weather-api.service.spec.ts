@@ -20,7 +20,7 @@ describe('WeatherApiService', () => {
       providers: [WeatherApiService]
     });
 
-    httpTestingController = TestBed.get(HttpTestingController);
+    httpTestingController = TestBed.inject(HttpTestingController);
     service = TestBed.inject(WeatherApiService);
   });
 
@@ -33,28 +33,16 @@ describe('WeatherApiService', () => {
     expect(service).toBeTruthy();
   });
 
-  it('getCurrentWeatherList should provide weather data for the given city ids', () => {
-    const cityIds = [1, 2, 3, 4];
-
-    service.getCurrentWeatherList(cityIds).subscribe((response: any) => {
-      expect(response).not.toBe(null);
-      expect(JSON.stringify(response)).toEqual(JSON.stringify(mockResponse));
-    });
-
-    const req = httpTestingController.expectOne(`${apiURL}/group?id=${cityIds}&units=metric&appid=${apiKey}`);
-    req.flush(mockResponse);
-  });
-
-  it('getHourlyWeather should provide hourly weather data based on lat & lon coordinates', () => {
+  it('getCurrentAndHourlyWeatherForecast should provide current and hourly weather forecast based on lat & lon coordinates', () => {
     const latitude = 15;
     const longitude = 35;
 
-    service.getHourlyWeather(latitude, longitude).subscribe((response: any) => {
+    service.getCurrentAndHourlyWeatherForecast(latitude, longitude).subscribe((response: any) => {
       expect(response).not.toBe(null);
       expect(JSON.stringify(response)).toEqual(JSON.stringify(mockResponse));
     });
 
-    const req = httpTestingController.expectOne(`${apiURL}/onecall?lat=${latitude}&lon=${longitude}&units=metric&exclude=current,minutely,daily,alerts&appid=${apiKey}`);
+    const req = httpTestingController.expectOne(`${apiURL}/onecall?lat=${latitude}&lon=${longitude}&units=metric&exclude=minutely,daily,alerts&appid=${apiKey}`);
     req.flush(mockResponse);
   });
 });

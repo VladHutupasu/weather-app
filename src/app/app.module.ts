@@ -10,7 +10,7 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { HomeComponent } from './home/home.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { HttpClientModule } from '@angular/common/http';
-import { CityWeatherInformationComponent } from './city-weather-information/city-weather-information.component';
+import { CityWeatherForecastComponent } from './city-weather-forecast/city-weather-forecast.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +18,7 @@ import { CityWeatherInformationComponent } from './city-weather-information/city
     NotFoundComponent,
     ToolbarComponent,
     HomeComponent,
-    CityWeatherInformationComponent
+    CityWeatherForecastComponent
   ],
   imports: [
     BrowserModule,
