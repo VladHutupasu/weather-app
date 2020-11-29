@@ -1,0 +1,58 @@
+<mat-expansion-panel hideToggle>
+    <mat-expansion-panel-header>
+        <div class="city-description-container" fxFlex="33.33" fxLayoutAlign="start center">
+            <h1>{{city.name}}</h1>
+            <span class="country">{{city.country}}</span>
+        </div>
+        <div class="average-temperature-container" fxFlex="33.33" fxLayoutAlign="center center">
+            <!-- Round to closes number when showing the temperature -->
+            <!-- Check for undefined since 0 degrees as temperature can also throw false -->
+            <div *ngIf="city.weatherInformation; else noData" fxLayoutAlign="center center">
+                <img [src]="'http://openweathermap.org/img/wn/' + city.weatherInformation?.weatherIcon + '@2x.png'">
+                <h1>{{city.weatherInformation?.currentTemperature | number:'1.0-0'}}&deg;</h1>
+            </div>
+        </div>
+        <div class="wind-strength-container" fxFlex="33.33" fxLayoutAlign="center center">
+            <div *ngIf="city.weatherInformation; else noData" fxLayoutAlign="center center">
+                <h1>{{city.weatherInformation?.windStrength | number:'1.0-1'}} m/s</h1>
+            </div>
+        </div>
+    </mat-expansion-panel-header>
+
+    <div *ngIf="hourlyWeather.length > 0; else noHourlyData" fxLayout="row">
+        <div fxFlex="5" fxLayoutAlign="center center">
+            <button class="hourly-navigator" mat-icon-button (click)="scroll('left')"
+                [disabled]="checkIfMaxScrollReached('left')">
+                <mat-icon>keyboard_arrow_left</mat-icon>
+            </button>
+        </div>
+        <div #hourlyContainer fxFlex class="hourly-data-container" fxLayout="row" fxLayoutAlign="space-between center"
+            fxLayoutGap="3rem">
+            <div *ngFor="let oneHourData of hourlyWeather; let idx = index" fxLayout="column"
+                fxLayoutAlign="center center">
+                <!-- Angular date pipe needs miliseconds and therefore * 1000 -->
+                <div class="time" fxLayout="row">
+                    <h1>{{ idx === 0 ? 'Now' : (oneHourData.dt * 1000 | date: 'h a')  }}</h1>
+                </div>
+                <div class="temperature" fxLayout="row" fxLayoutAlign="center center">
+                    <img [src]="'http://openweathermap.org/img/wn/' + oneHourData.weather[0].icon + '.png'">
+                    <h2>{{ oneHourData.temp | number:'1.0-0' }}&deg;</h2>
+                </div>
+            </div>
+        </div>
+        <div fxFlex="5" fxLayoutAlign="center center">
+            <button class="hourly-navigator" mat-icon-button (click)="scroll('right')"
+                [disabled]="checkIfMaxScrollReached('right')">
+                <mat-icon>keyboard_arrow_right</mat-icon>
+            </button>
+        </div>
+    </div>
+</mat-expansion-panel>
+
+<ng-template #noData>
+    <h1>--</h1>
+</ng-template>
+
+<ng-template #noHourlyData>
+    <h2 class="no-hourly-data">No data available</h2>
+</ng-template>

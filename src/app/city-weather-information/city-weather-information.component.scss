@@ -1,0 +1,106 @@
+@import "_variables.scss";
+
+.average-temperature-container > div > img {
+  height: 85px;
+  width: auto;
+}
+
+.average-temperature-container h1,
+.wind-strength-container h1 {
+  font-size: 2.2rem;
+  font-weight: 500;
+}
+
+.city-description-container h1 {
+  font-size: 1.7rem;
+  font-weight: 400;
+}
+
+.city-description-container span.country {
+  border-radius: 4px;
+  padding: 0px 5px;
+  display: inline-block;
+  font-size: 1rem;
+  background: rgb(239, 242, 245);
+  color: rgb(88, 102, 126);
+  vertical-align: middle;
+  text-align: center;
+  margin-left: 5px;
+}
+
+.mat-expansion-panel {
+  padding: 20px 0px;
+  box-shadow: none;
+  background-color: transparent;
+  border-radius: 25px !important;
+}
+
+::ng-deep .mat-expansion-panel-body {
+  padding: 0px 0px 16px 0px !important;
+}
+
+.mat-expansion-panel.mat-expanded,
+.mat-expansion-panel .mat-expansion-panel-header:not(.mat-expanded):hover {
+  background-color: $color-hover-gray;
+}
+
+.mat-expansion-panel-header.mat-expanded:focus,
+.mat-expansion-panel-header.mat-expanded:hover {
+  background: none;
+}
+
+.hourly-data-container {
+  padding-top: 1rem;
+  overflow-x: auto;
+}
+
+.hourly-data-container::-webkit-scrollbar {
+  display: none;
+}
+
+.hourly-data-container {
+  -ms-overflow-style: none;
+}
+
+.hourly-data-container .time > h1 {
+  font-weight: 500;
+  font-size: 1.7rem;
+  line-height: 1;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.hourly-data-container .temperature > h2 {
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+button.hourly-navigator.mat-button-disabled .mat-icon {
+  opacity: 0.3;
+}
+
+h2.no-hourly-data {
+  width: 100%;
+  text-align: center;
+  font-weight: 400;
+  font-style: italic;
+  font-size: 1.4rem;
+}
+
+@media only screen and (max-width: 800px) {
+  .average-temperature-container > div > img {
+    height: 40px;
+    width: auto;
+  }
+
+  .hourly-data-container .hour-time-temp > img {
+    height: 20px;
+    width: auto;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .city-description-container span.country {
+    visibility: hidden;
+  }
+}

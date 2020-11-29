@@ -1,0 +1,15 @@
+<mat-card class="weather-card">
+    <mat-card-content>
+        <div class="column-titles-container" fxLayout="row" fxLayoutAlign="end center">
+            <div fxFlex="33.33" fxLayoutAlign="center center">
+                <h4>Average Temperature&nbsp;&deg;</h4>
+            </div>
+            <div fxFlex="33.33" fxLayoutAlign="center center">
+                <h4>Wind Strength&nbsp;&#9780;</h4>
+            </div>
+        </div>
+        <mat-accordion>
+            <city-weather-information *ngFor="let city of europeanCities" [city]="city"></city-weather-information>
+        </mat-accordion>
+    </mat-card-content>
+</mat-card>

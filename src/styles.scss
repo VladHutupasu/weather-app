@@ -1,0 +1,35 @@
+@import "_variables.scss";
+
+html,
+body {
+  height: 100%;
+  font-size: $font-size-base;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-image: url("./assets/images/clouds-cover.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+body * {
+  color: $text-color;
+}
+
+@media only screen and (max-width: 1200px) {
+  html,
+  body {
+    font-size: 11px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  html,
+  body {
+    font-size: 9px;
+  }
+}

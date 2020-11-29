@@ -1,0 +1,17 @@
+@import "_variables.scss";
+
+.not-found-container {
+  padding-top: 10%;
+  text-align: center;
+}
+
+h1 {
+  font-size: 150px;
+  font-weight: 700;
+  line-height: 140px;
+}
+
+a {
+  background-color: $primary-color;
+  margin-top: 50px;
+}

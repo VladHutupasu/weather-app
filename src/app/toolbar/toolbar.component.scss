@@ -1,0 +1,25 @@
+img#home-page-logo {
+  width: auto;
+  height: 50px;
+  vertical-align: middle;
+}
+
+.mat-toolbar {
+  background-color: transparent;
+}
+
+.mat-toolbar-row {
+  padding-top: 10px;
+}
+
+#toolbar-title {
+  margin-left: 10px;
+  font-size: 1.7rem;
+}
+
+@media only screen and (max-width: 800px) {
+  img#home-page-logo {
+    width: auto;
+    height: 25px;
+  }
+}

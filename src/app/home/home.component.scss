@@ -1,0 +1,26 @@
+.weather-card {
+  margin: 7% auto 0 auto;
+  max-width: 1500px;
+  border-radius: 25px;
+  background-color: rgba(56, 111, 153, 0.76);
+}
+
+.weather-card .mat-card-title > h1 {
+  font-size: 2.5rem;
+}
+
+::ng-deep .weather-card .mat-card-header .mat-card-header-text {
+  margin: 0 24px;
+}
+
+.column-titles-container {
+  padding: 0 24px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.column-titles-container div h4 {
+  margin: 0;
+  font-size: 1.125rem;
+  font-weight: 400;
+}
