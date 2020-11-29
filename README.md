@@ -1,8 +1,10 @@
-# <img src="src/assets/images/logo.svg" alt="logo" width="80"/> Weather App
+# <img src="src/assets/images/logo.svg" alt="logo" width="45"/> Weather App
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.2.
 
 Project available on [this github repository](https://github.com/VladHutupasu/weather-app).
+
+### [Demo](https://VladHutupasu.github.io/weather-app)
 
 ### API used
 
@@ -26,7 +28,7 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ### Building the project
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Run `ng build` to build the project. The build artifacts will be stored in the `docs/` directory. Use the `-prod` flag for a production build.
 
 ### Running unit tests
 

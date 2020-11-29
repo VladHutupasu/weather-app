@@ -1,0 +1,23 @@
+/************** FONT **************/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
+@import "~@angular/material/theming";
+$custom-typography: mat-typography-config(
+  $font-family: "Poppins",
+);
+@include mat-core($custom-typography);
+
+
+/************** COLORS **************/
+$text-color: white;
+
+$primary-color: #39709a;
+
+$color-yellow: #fcc302;
+$color-hover-gray: rgba(232, 231, 231, 0.08);
+
+
+/************** FONT SIZES **************/
+$font-size-base: 16px;
+$font-size-small: 7.6px;
+
+
